@@ -1,13 +1,11 @@
 const Router = require('express').Router();
-const debug = require('debug')('App:productRouter')
-const { writeFile, readFile } = require('node:fs');
-const path = require('node:path');
-const {saveProduct} = require('./../controller/productController');
-
+const debug = require('debug')('App:productRouter');
+const { saveProduct } = require('./../controller/productController');
+const { storeImage } = require('./../middleware/productsMiddleWare');
 
 Router
     .route('/')
-    .post((req, res)=>{
+    .post(storeImage, (req, res)=>{
         const productData = req.body
         
         try {
