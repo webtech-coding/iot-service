@@ -7,13 +7,11 @@ const swaggerDoc = require('./api_docs/swagger.json');
 
 const app = require('./app');
 
-// Register swagger docs
+// Register API-swagger docs
 app.use('/api-docs', swaggerUI.serve);
 app.use('/api-docs', swaggerUI.setup(swaggerDoc));
 
-/**
- * Register the image upload routers
- */
+// Register routes for the application
 app.use('/image', imageRouter);
 app.use('/product', productRouter);
 
