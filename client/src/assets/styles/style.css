@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main{
+    max-width: 900px;
+    margin: 20px auto;
+    background: #f5f3f2;
+    min-height: calc(100vh - 40px);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+h3{
+    color: #303030;
+}
+
+
+form{
+    margin: 20px 0;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label{
+    text-transform: capitalize;
+    color: #515151;
+    margin-bottom: 10px;
+}
+
+input{
+    height: 36px;
+    border-radius: 5px;
+    border:1px solid #cccccc;
+    outline: none;
+    padding: 10px;
+}
+
+textarea{
+    border:1px solid #cccccc;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+input::placeholder, textarea::placeholder{
+    color:#cccccc;
+}
+
+button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0076bf;
+    color: aliceblue;
+    cursor: pointer;
+}
