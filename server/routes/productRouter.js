@@ -6,7 +6,7 @@ const { storeImage } = require('./../middleware/productsMiddleWare');
 Router
     .route('/')
     .post(storeImage, (req, res)=>{
-        const productData = req.body
+        const productData = req.body      
         
         try {
             saveProduct(productData)
