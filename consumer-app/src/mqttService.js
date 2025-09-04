@@ -2,7 +2,7 @@ const mqtt = require('mqtt');
 
 class MqttService{
     constructor(){
-        this.mqttClient = mqtt.connect('mqtt://localhost:1883');
+        this.mqttClient = mqtt.connect('ws://localhost:1883');
 
         this.mqttClient.on('connect',()=>{
             console.log('connected to mqtt');
@@ -50,4 +50,4 @@ class MqttService{
 
 const mqttClient = new MqttService()
 
-module.exports = mqttClient
+module.exports= mqttClient

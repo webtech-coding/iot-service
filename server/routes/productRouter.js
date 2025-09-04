@@ -2,6 +2,7 @@ const Router = require('express').Router();
 const debug = require('debug')('App:productRouter');
 const { saveProduct } = require('./../controller/productController');
 const { storeImage } = require('./../middleware/productsMiddleWare');
+const { mqttClient } = require('./../mqttService'); 
 
 Router
     .route('/')
@@ -10,6 +11,7 @@ Router
         
         try {
             saveProduct(productData)
+            
 
         } catch (error) {
             debug(error)

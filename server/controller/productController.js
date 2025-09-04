@@ -1,7 +1,7 @@
 const path = require('node:path');
 const debug = require('debug')('App::productsController');
 const {readFile, writeFile} = require('node:fs');
-
+const {mqttClient} = require('./../mqttService');
 const storagePath = path.resolve(process.env.STORAGE_PATH, './products.json')
 
 const saveProduct = (product)=>{
@@ -32,6 +32,8 @@ const appendToFile = (newData, storedData)=>{
         if(err){
             throw Error(err)
         }
+        mqttClient.publish('products', JSON.stringify(allProducts))
+
     })
 }
 
